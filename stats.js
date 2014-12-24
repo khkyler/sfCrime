@@ -2,22 +2,16 @@
 
 function initialize() {
 
-  // var mapOptions = {
-  //   center: new google.maps.LatLng(37.701560, -122.432415),
-  //   zoom:13
-  // };
-  // var map = new google.maps.Map(d3.select('#map').node(),
-  //     mapOptions);
-  // };
+  
   var map = new google.maps.Map(d3.select("#map").node(), {
     zoom: 8,
     center: new google.maps.LatLng(37.76487, -122.41948),
     mapTypeId: google.maps.MapTypeId.TERRAIN
   });
 };
-//google.maps.event.addDomListener(window, 'load', initialize);
 
-d3.json("sfCrime.json", function(data) {
+
+d3.xhr(/*firebase url goes here*/, function(data) {
   var overlay = new google.maps.OverlayView();
 
   overlay.onAdd = function() {
@@ -58,30 +52,3 @@ d3.json("sfCrime.json", function(data) {
   };
 });
 overlay.setMap(map);
-// var map = d3.select('body').append('svg')
-//           .attr('width', 1600)
-//           .attr('height', 1600)
-//           .attr('class', 'map');
-
-// var dragMove = function(){
-
-//   var x = d3.event.x;
-//   var y = d3.event.y;
-//   d3.select('.player').data([{cx: x, cy:y, r: 2}])
-//     .attr('cx', x).attr('cy', y);
-// }
-
-// //define drag behavior
-// var drag = d3.behavior.drag().on("drag", dragMove);
-
-// map.selectAll('.player').data([{cx: 800, cy:800, r: 2}])
-//   .enter().append('circle')
-//   .attr('class', 'player')
-//   .attr('cx', function(d){return d.cx})
-//   .attr('cy', function(d){return d.cy})
-//   .attr('r', function(d){return d.r})
-//   .attr('fill','red').call(drag);
-
-// var locationConverter = function (lat, lon) {
-
-// }
