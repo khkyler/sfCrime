@@ -8,10 +8,10 @@ function initialize() {
     center: new google.maps.LatLng(37.76487, -122.41948),
     mapTypeId: google.maps.MapTypeId.TERRAIN
   });
-};
+}
 
 
-d3.xhr(/*firebase url goes here*/, function(data) {
+d3.xhr(/*firebase url goes here*/"", function(data) {
   var overlay = new google.maps.OverlayView();
 
   overlay.onAdd = function() {
