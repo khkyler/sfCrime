@@ -3,7 +3,7 @@
 function initialize() {
 
   
-  var map = new google.maps.Map(d3.select("#map").node(), {
+  var map = new google.maps.Map(d3.select("#map-canvas").node(), {
     zoom: 8,
     center: new google.maps.LatLng(37.76487, -122.41948),
     mapTypeId: google.maps.MapTypeId.TERRAIN
