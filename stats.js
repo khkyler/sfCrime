@@ -1,17 +1,26 @@
 
 
-function initialize() {
+$(document).ready(function(){
+  var map = initializeMap();
 
-  
+
+});
+
+
+
+
+
+function initializeMap() {
   var map = new google.maps.Map(d3.select("#map-canvas").node(), {
-    zoom: 8,
-    center: new google.maps.LatLng(37.76487, -122.41948),
+    zoom: 13,
+    center: new google.maps.LatLng(37.762111, -122.439488),
     mapTypeId: google.maps.MapTypeId.TERRAIN
   });
+  return map;
 };
 
 
-d3.xhr(/*firebase url goes here*/, function(data) {
+d3.xhr('https://sfcrime.firebaseio.com/-JdyczTmHqiiMaU0uVqX', function(data) {
   var overlay = new google.maps.OverlayView();
 
   overlay.onAdd = function() {
@@ -51,4 +60,5 @@ d3.xhr(/*firebase url goes here*/, function(data) {
       };
   };
 });
+
 overlay.setMap(map);
