@@ -1,14 +1,30 @@
-/* your beautiful css styling goes here! */
-
-/* Note: an asteroid image is included in this repo.
-Feel free to use it if you like. */
-
-#map {
-  width: 100%;
+html, body {
   height: 100%;
-  /*margin: 0;
-  padding: 0;*/
 }
 
+
+body {
+  margin: 0;
+  position: relative;
+}
+
+#map-canvas {
+  height: 760px;
+  width: 100%;
+}
+
+#filter {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  height: 100px;
+  width: 100px;
+  border: 2px solid black;
+}
+
+/*. map{
+  background: black;
+  opacity: 0.5;
+}*/
 
 
